@@ -1,17 +1,13 @@
 import express from "express";
 import { asyncHandler } from "../helpers/requestHandler";
+import extractor from "../helpers/filmsExtractor";
 
 const moviesRouter = express.Router();
 
 moviesRouter.get(
   "/",
   asyncHandler(async (req, res) => {
-    return {
-      movie: {
-        title: "culo",
-        year: "2018"
-      }
-    };
+    return extractor.getFilms();
   })
 );
 
