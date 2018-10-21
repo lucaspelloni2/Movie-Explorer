@@ -1,5 +1,6 @@
 import got from "got";
 import cheerio from "cheerio";
+import errorHandler from "../errorHandler";
 const load = cheerio.load;
 
 const IMDB_BASE = "https://www.imdb.com";
@@ -14,6 +15,9 @@ export default {
       .find("a")
       .attr("href");
 
+    if (!root) {
+      return errorHandler.noFilmFound();
+    }
     const movieLink = IMDB_BASE + root;
 
     return {
