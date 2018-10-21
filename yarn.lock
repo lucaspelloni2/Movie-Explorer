@@ -9382,6 +9382,11 @@ topo@2.x.x:
   dependencies:
     hoek "4.x.x"
 
+torrent-name-parser@^0.6.5:
+  version "0.6.5"
+  resolved "https://registry.yarnpkg.com/torrent-name-parser/-/torrent-name-parser-0.6.5.tgz#0795d7763a3be2694d632e2721dcd14aa71b53b1"
+  integrity sha1-B5XXdjo74mlNYy4nIdzRSqcbU7E=
+
 touch@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/touch/-/touch-3.1.0.tgz#fe365f5f75ec9ed4e56825e0bb76d24ab74af83b"
