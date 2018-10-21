@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "cors": "^2.8.4",
     "express": "^4.16.4",
     "nodemon": "^1.18.4",
     "react": "^16.5.2",
