@@ -1,12 +1,13 @@
 import express from "express";
 import router from "./routes";
+import * as cors from "cors";
 
 let app;
 let server;
 export default {
   setupApp: async () => {
     app = express();
-    // app.use(cors({credentials: true, origin: ['http://localhost:3000']}));
+    app.use(cors({credentials: true, origin: ['http://localhost:3000']}));
     app.use("/api", router);
   },
   listenTo: port => {
