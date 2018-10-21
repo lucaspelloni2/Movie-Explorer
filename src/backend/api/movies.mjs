@@ -20,7 +20,7 @@ moviesRouter.get(
       return errorHandler.noQueryParameterProvided();
     }
     const movie = req.query.movie;
-    return await imdb.get();
+    return await imdb.get(movie);
   })
 );
 
