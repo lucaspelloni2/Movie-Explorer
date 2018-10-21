@@ -16,7 +16,7 @@ export default {
       .attr("href");
 
     if (!root) {
-      return errorHandler.noFilmFound();
+      return null;
     }
     const movieLink = IMDB_BASE + root;
 
