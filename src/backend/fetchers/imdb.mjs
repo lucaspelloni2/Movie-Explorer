@@ -20,9 +20,11 @@ export default {
     }
     const movieLink = IMDB_BASE + root;
 
+    const id = root.toString().split("/")[2];
+
     return {
       movieLink,
-      id: root
+      id
     };
   }
 };
