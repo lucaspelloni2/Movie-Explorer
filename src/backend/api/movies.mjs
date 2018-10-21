@@ -16,11 +16,11 @@ moviesRouter.get(
 moviesRouter.get(
   "/find",
   asyncHandler(async (req, res) => {
-    if (!req.query.movie) {
+    if (!req.query.title) {
       return errorHandler.noQueryParameterProvided();
     }
-    const movie = req.query.movie;
-    return await imdb.get(movie);
+    const title = req.query.title;
+    return await imdb.get(title);
   })
 );
 
