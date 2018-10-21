@@ -1,13 +1,5 @@
-import express from "express";
+import app from "./app";
 
-const app = express();
-
-app.get("/", function(req, res) {
-  res.send("Hello World");
-});
-
-app.listen(8080); 
-
-console.log('App started. Date: ' + new Date().toString());
-
-export default app;
+app.setupApp();
+app.listenTo(process.env.PORT || 8080);
+console.log("App started. Date: " + new Date().toString());
