@@ -2,6 +2,7 @@ import fs from "fs";
 import tnp from "torrent-name-parser";
 import imdb from "../fetchers/imdb";
 import { Film } from "../models/Film";
+import omdb from "../fetchers/omdb";
 
 // const FILM_DIRECTORY = "/Volumes/Azione/Film/NEW+NEW";
 const FILM_DIRECTORY = "./films";
@@ -17,16 +18,15 @@ const getFiles = async () => {
     }
   });
 
-  const myFilms = await Promise.all(
+  return await Promise.all(
     films.map(async film => {
       const myFilm = await imdb.get(film.title);
       film.id = myFilm.id;
       film.movieLink = myFilm.movieLink;
-      return film;
+      const myFilmData = await omdb.getMetaData(film.id);
+      return { ...film, ...myFilmData };
     })
   );
-
-  return myFilms;
 };
 
 export default {
