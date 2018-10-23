@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Krub');
+@import url("https://fonts.googleapis.com/css?family=Krub");
 
 body {
   margin: 0;
   padding: 0;
-    font-family: 'Krub', sans-serif;
+  font-family: "Krub", sans-serif;
   color: white;
   height: 100%;
-    background: linear-gradient(to top, #4594ff 0%, #006ec3 100%) no-repeat fixed;
+  background: linear-gradient(rgba(30, 27, 38, 0.9), rgba(30, 27, 38, 0.9)),
+    url("http://i63.tinypic.com/17s7me.jpg");
+  background-size: cover;
 }
 
 code {

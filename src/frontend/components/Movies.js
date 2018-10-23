@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { getDomain } from "../helpers/getDomain";
 import Movie from "../views/Movie";
 import Spinner from "../views/Spinner";
+import LottieManager from "../views/lottie/LottieManager";
 
 const Container = styled.div``;
 
@@ -41,8 +42,8 @@ class Movies extends React.Component {
   render() {
     return (
       <Parent>
-        {!this.state.movies ? (
-          <Spinner />
+        {!this.state.movies || this.state.movies ? (
+          <LottieManager />
         ) : (
           <Container>
             {this.state.movies.map(movie => {
