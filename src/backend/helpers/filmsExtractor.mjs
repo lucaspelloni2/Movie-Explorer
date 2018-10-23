@@ -4,7 +4,7 @@ import imdb from "../fetchers/imdb";
 import { Film } from "../models/Film";
 import omdb from "../fetchers/omdb";
 
-const FILM_DIRECTORY = "/Volumes/Lucas's USB C HD/old hardisk/Film/Azione";
+const FILM_DIRECTORY = "/Volumes/Lucas's USB C HD/old hardisk/AddedOnDataBase/1";
 //const FILM_DIRECTORY = "./films";
 
 const preProcessTitle = title => {
