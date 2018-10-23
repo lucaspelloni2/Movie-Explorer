@@ -1,21 +1,34 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { BACKGROUND_COLOR } from "./helpers/colors";
+import Movies from "./components/Movies";
 
 const Container = styled.div``;
+
+const Title = styled.h1`
+  font-size: 3.5em;
+  line-height: 1.3em;
+  text-align: center;
+  letter-spacing: 1px;
+`;
+
+const SubTitle = styled.h4`
+  text-align: center;
+  margin-top: 0;
+  font-style: italic;
+  font-weight: 100;
+`;
 
 class App extends Component {
   render() {
     return (
       <Container>
-        <h1>My Title</h1>
-        <h1>My Title</h1>
-
-        <h3>My SubTitle</h3>
-        <p>
-          This is my paragraph aasf as fa sfas fas fas fasff asfas f
-          asfasfjoaskof
-        </p>
+        <Title>Explore your films. Everywhere</Title>
+        <SubTitle>
+          A clean web-client for exploring local downloaded films, representing
+          them using aggregated data.
+        </SubTitle>
+        <Movies />
       </Container>
     );
   }

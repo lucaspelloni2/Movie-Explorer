@@ -27,7 +27,7 @@ const getFiles = async () => {
         const myFilmData = await omdb.getMetaData(film.id);
         return { ...film, ...myFilmData };
       } else {
-        // TODO: handle films without id case (thus not found on the api) 
+        // TODO: handle films without id case (thus not found on the api)
       }
     })
   );
