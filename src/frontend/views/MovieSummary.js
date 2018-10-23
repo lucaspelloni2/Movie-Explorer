@@ -34,7 +34,11 @@ const MovieSummary = ({ movie }) => {
       <TopContainer>
         <Title>Summary</Title>
         <RatingContainer>
-          <MovieRating rating={movie.imdbRating} />
+          {movie.imdbRating !== "N/A" && movie.imdbRating ? (
+            <MovieRating rating={movie.imdbRating} />
+          ) : (
+            <i>No rating.</i>
+          )}
         </RatingContainer>
       </TopContainer>
       <Text>{movie.Plot}</Text>

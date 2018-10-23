@@ -24,7 +24,10 @@ const getSrc = poster => {
 };
 
 const MoviePoster = ({ poster, ...otherProps }) => {
-  return <Image src={getSrc(poster)} {...otherProps} />;
+  if (poster !== "N/A" && poster) {
+    return <Image src={getSrc(poster)} {...otherProps} />;
+  }
+  return <h1>IMPLEMENT NOT FOUND IMAGE IN API</h1>;
 };
 
 export default MoviePoster;

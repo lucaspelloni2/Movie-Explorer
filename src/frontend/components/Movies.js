@@ -36,6 +36,7 @@ class Movies extends React.Component {
       .then(response => {
         if (response.success) {
           this.setState({ movies: response.data });
+          console.log(response.data);
         } else {
         }
       })
@@ -52,7 +53,9 @@ class Movies extends React.Component {
         ) : (
           <Container>
             {this.state.movies.map(movie => {
-              return <Movie movie={movie} id={movie.id} />;
+              if (movie) {
+                return <Movie movie={movie} id={movie.id} />;
+              }
             })}
           </Container>
         )}
