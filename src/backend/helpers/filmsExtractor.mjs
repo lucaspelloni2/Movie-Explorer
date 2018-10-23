@@ -4,8 +4,12 @@ import imdb from "../fetchers/imdb";
 import { Film } from "../models/Film";
 import omdb from "../fetchers/omdb";
 
-const FILM_DIRECTORY = "/Volumes/Lucas's USB C HD/old hardisk/Film/NEW";
+const FILM_DIRECTORY = "/Volumes/Lucas's USB C HD/old hardisk/Film/Azione";
 //const FILM_DIRECTORY = "./films";
+
+const preProcessTitle = title => {
+  return title.replace(/[^a-zA-Z ]/g, " ");
+};
 
 const getFiles = async () => {
   let films = [];
@@ -13,6 +17,7 @@ const getFiles = async () => {
     if (file !== ".DS_Store") {
       const film = new Film(tnp(file));
       if (film.title) {
+        film.title = preProcessTitle(film.title);
         films.push(film);
       }
     }

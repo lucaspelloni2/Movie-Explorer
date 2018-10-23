@@ -10,7 +10,6 @@ export default {
       `http://www.omdbapi.com/?i=${id}&apikey=${API_KEY}`,
       { json: true }
     );
-    console.log(body);
     return body;
   }
 };
