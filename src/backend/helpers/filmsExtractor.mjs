@@ -23,8 +23,12 @@ const getFiles = async () => {
       const myFilm = await imdb.get(film.title);
       film.id = myFilm.id;
       film.movieLink = myFilm.movieLink;
-      const myFilmData = await omdb.getMetaData(film.id);
-      return { ...film, ...myFilmData };
+      if (film.id) {
+        const myFilmData = await omdb.getMetaData(film.id);
+        return { ...film, ...myFilmData };
+      } else {
+        // TODO: handle films without id case (thus not found on the api) 
+      }
     })
   );
 };
