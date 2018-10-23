@@ -17,14 +17,25 @@ const Title = styled.h4`
   margin-bottom: 2px;
 `;
 
-const TopContainer = styled.div``;
+const TopContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const RatingContainer = styled.div`
+  margin-top: 13px;
+  margin-left: auto;
+  margin-right: 2px;
+`;
 
 const MovieSummary = ({ movie }) => {
   return (
     <Container>
       <TopContainer>
         <Title>Summary</Title>
-        <MovieRating rating={movie.imdbRating} />
+        <RatingContainer>
+          <MovieRating rating={movie.imdbRating} />
+        </RatingContainer>
       </TopContainer>
       <Text>{movie.Plot}</Text>
     </Container>
