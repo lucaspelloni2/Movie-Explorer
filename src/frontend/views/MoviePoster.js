@@ -18,8 +18,13 @@ const Image = styled.img`
   );
 `;
 
+const getSrc = poster => {
+  // increase quality
+  return poster.toString().replace("_SX300", "_SX2500");
+};
+
 const MoviePoster = ({ poster, ...otherProps }) => {
-  return <Image src={poster} {...otherProps} />;
+  return <Image src={getSrc(poster)} {...otherProps} />;
 };
 
 export default MoviePoster;
