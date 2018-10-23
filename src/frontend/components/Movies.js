@@ -5,7 +5,12 @@ import Movie from "../views/Movie";
 import Spinner from "../views/Spinner";
 import LottieManager from "../views/lottie/LottieManager";
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+`;
 
 const Parent = styled.div`
   display: flex;
@@ -42,7 +47,7 @@ class Movies extends React.Component {
   render() {
     return (
       <Parent>
-        {!this.state.movies ?(
+        {!this.state.movies ? (
           <LottieManager />
         ) : (
           <Container>

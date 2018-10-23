@@ -1,12 +1,17 @@
 import React from "react";
 import styled from "styled-components";
+import MoviePoster from "./MoviePoster";
 
-const Container = styled.div`
+const Card = styled.div`
   display: flex;
-  flex-direction: column;
+  margin: 20px;
 `;
 const Movie = ({ movie }) => {
-  return <Container>{movie.title}</Container>;
+  return (
+    <Card>
+      <MoviePoster poster={movie.Poster} width={200} height={300} />
+    </Card>
+  );
 };
 
 export default Movie;
