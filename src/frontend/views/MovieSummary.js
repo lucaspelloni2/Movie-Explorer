@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import MovieRating from "./MovieRating";
 
 const Container = styled.div``;
 
@@ -16,10 +17,15 @@ const Title = styled.h4`
   margin-bottom: 2px;
 `;
 
+const TopContainer = styled.div``;
+
 const MovieSummary = ({ movie }) => {
   return (
     <Container>
-      <Title>Summary</Title>
+      <TopContainer>
+        <Title>Summary</Title>
+        <MovieRating rating={movie.imdbRating} />
+      </TopContainer>
       <Text>{movie.Plot}</Text>
     </Container>
   );
