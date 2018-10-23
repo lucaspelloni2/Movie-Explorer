@@ -3,7 +3,8 @@ import styled from "styled-components";
 import MoviePoster from "./MoviePoster";
 import MovieText from "./MovieText";
 
-const CARD_WIDTH = 260;
+const CARD_WIDTH = 350;
+const ratio = 1688 / 2500; // --> width / height  = ratio
 
 const Card = styled.div`
   display: flex;
@@ -24,7 +25,11 @@ const Card = styled.div`
 const Movie = ({ movie }) => {
   return (
     <Card>
-      <MoviePoster poster={movie.Poster} width={CARD_WIDTH} height={370} />
+      <MoviePoster
+        poster={movie.Poster}
+        width={CARD_WIDTH}
+        height={CARD_WIDTH / ratio}
+      />
       <MovieText movie={movie} />
     </Card>
   );
