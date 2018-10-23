@@ -42,7 +42,7 @@ class Movies extends React.Component {
   render() {
     return (
       <Parent>
-        {!this.state.movies || this.state.movies ? (
+        {!this.state.movies ?(
           <LottieManager />
         ) : (
           <Container>
