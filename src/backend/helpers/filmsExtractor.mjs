@@ -1,5 +1,7 @@
 import fs from "fs";
 import tnp from "torrent-name-parser";
+import getSize from "get-folder-size";
+import pretty from "prettysize";
 import imdb from "../fetchers/imdb";
 import { Film } from "../models/Film";
 import omdb from "../fetchers/omdb";
@@ -12,22 +14,29 @@ const preProcessTitle = title => {
   return title.replace(/[^a-zA-Z ]/g, " ");
 };
 
+const getFileSize = async path => {
+  const ab = getSize(path, function(err, size) {
+    if (err) {
+      throw err;
+    }
+    return getFileSize(pretty(size, { places: 2 }));
+  });
+};
+
 const getFiles = async () => {
   let films = [];
   fs.readdirSync(FILM_DIRECTORY).map(async file => {
     if (file !== ".DS_Store") {
       const film = new Film(tnp(file));
-      const path = FILM_DIRECTORY + "/" + file;
-      const fileSizeInBytes = fs.statSync(path).size;
+      // const path = FILM_DIRECTORY + "/" + file;
 
+      // TODO: fix the size
+      /*      getSize(path, function(size) {
+        console.log(size); // this is where you get the return value
+      });*/
 
-      let isDirExists =
-        fs.existsSync(path) && fs.lstatSync(path).isDirectory();
-
-        console.log(isDirExists + file);
-
-      // file:///Users/lucaspelloni/Desktop/GitHub/movie-explorer/films/
       if (film.title) {
+        film.path = file;
         film.title = preProcessTitle(film.title);
         films.push(film);
       }

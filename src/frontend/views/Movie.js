@@ -30,11 +30,17 @@ const Card = styled.div`
 const Movie = ({ movie }) => {
   return (
     <Card>
-      <MoviePoster
-        poster={movie.Poster}
-        width={CARD_WIDTH}
-        height={CARD_WIDTH / ratio}
-      />
+      <a
+        href={`http://127.0.0.1:8887/${movie.path}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <MoviePoster
+          poster={movie.Poster}
+          width={CARD_WIDTH}
+          height={CARD_WIDTH / ratio}
+        />
+      </a>
       <MovieText movie={movie} />
     </Card>
   );
