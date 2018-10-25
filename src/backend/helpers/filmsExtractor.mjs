@@ -4,8 +4,9 @@ import imdb from "../fetchers/imdb";
 import { Film } from "../models/Film";
 import omdb from "../fetchers/omdb";
 
-const FILM_DIRECTORY = "/Volumes/Lucas's USB C HD/old hardisk/AddedOnDataBase/1";
-//const FILM_DIRECTORY = "./films";
+// const FILM_DIRECTORY = "/Volumes/Lucas's USB C HD/old hardisk/AddedOnDataBase/1";
+const FILM_DIRECTORY =
+  "/Users/lucaspelloni/Desktop/GitHub/movie-explorer/films";
 
 const preProcessTitle = title => {
   return title.replace(/[^a-zA-Z ]/g, " ");
@@ -16,6 +17,16 @@ const getFiles = async () => {
   fs.readdirSync(FILM_DIRECTORY).map(async file => {
     if (file !== ".DS_Store") {
       const film = new Film(tnp(file));
+      const path = FILM_DIRECTORY + "/" + file;
+      const fileSizeInBytes = fs.statSync(path).size;
+
+
+      let isDirExists =
+        fs.existsSync(path) && fs.lstatSync(path).isDirectory();
+
+        console.log(isDirExists + file);
+
+      // file:///Users/lucaspelloni/Desktop/GitHub/movie-explorer/films/
       if (film.title) {
         film.title = preProcessTitle(film.title);
         films.push(film);

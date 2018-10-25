@@ -1,6 +1,5 @@
 import got from "got";
 import cheerio from "cheerio";
-import errorHandler from "../errorHandler";
 const load = cheerio.load;
 
 const IMDB_BASE = "https://www.imdb.com";

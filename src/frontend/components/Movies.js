@@ -53,9 +53,7 @@ class Movies extends React.Component {
         ) : (
           <Container>
             {this.state.movies.map(movie => {
-              if (movie) {
-                return <Movie movie={movie} id={movie.id} />;
-              }
+              return <Movie movie={movie} id={movie.id} />;
             })}
           </Container>
         )}
