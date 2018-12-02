@@ -1,5 +1,3 @@
-//
-
 import got from "got/source";
 
 const API_KEY = process.env.API_KEY;

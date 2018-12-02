@@ -5,6 +5,7 @@ import pretty from "prettysize";
 import imdb from "../fetchers/imdb";
 import { Film } from "../models/Film";
 import omdb from "../fetchers/omdb";
+import moviedb from "../fetchers/moviedb";
 
 // const FILM_DIRECTORY = "/Volumes/Lucas's USB C HD/old hardisk/AddedOnDataBase/1";
 const FILM_DIRECTORY =
@@ -51,6 +52,7 @@ const getFiles = async () => {
         film.movieLink = myFilm.movieLink;
         if (film.id) {
           const myFilmData = await omdb.getMetaData(film.id);
+          film.trailer = await moviedb.getTrailer(film.id);
           return { ...film, ...myFilmData };
         } else {
           // TODO: handle films without id case (thus not found on the api)
