@@ -16,7 +16,7 @@ class LottieManager extends React.Component {
     const defaultOptions = {
       loop: true,
       autoplay: true,
-      animationData: require("./data.json"),
+      animationData: require("./gears.json"),
       rendererSettings: {
         preserveAspectRatio: "xMidYMid slice"
       }
