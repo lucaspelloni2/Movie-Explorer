@@ -11,7 +11,7 @@ const Text = styled.p`
   word-break: break-word;
 `;
 
-const Title = styled.h4`
+export const Title = styled.h4`
   text-transform: uppercase;
   font-size: 12px;
   margin-bottom: 2px;
