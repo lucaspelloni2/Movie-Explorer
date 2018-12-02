@@ -8,9 +8,10 @@ const ratio = 1688 / 2500; // --> width / height  = ratio
 
 const Card = styled.div`
   &:hover {
-    transform: scale(1.05);
+    transform: translate3d(10px, -20px, -100px);
     cursor: pointer;
   }
+  transform-style: preserve-3d;
   transition: 0.4s ease-in-out;
   display: flex;
   flex-direction: column;
