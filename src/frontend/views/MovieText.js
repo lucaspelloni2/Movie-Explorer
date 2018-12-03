@@ -24,15 +24,16 @@ const MovieText = ({ movie }) => {
   return (
     <Container>
       {" "}
-      <MovieTitle>{movie.Title}</MovieTitle>
+      <MovieTitle>{movie.title}</MovieTitle>
       <MovieMetaData movie={movie} />
       <MovieSummary movie={movie} />
-      <Links>
+      {/*<Links>
         {movie.trailer.length > 0 ? (
           <MovieLink link={movie.trailer[0]} icon={"/youtube.png"} />
         ) : null}
         <MovieLink link={movie.movieLink} icon={"/imdb.png"} />
-      </Links>
+      </Links>*/}
+      <MovieLink link={movie.movieLink} icon={"/imdb.png"} />
     </Container>
   );
 };
