@@ -4,6 +4,7 @@ import extractor from "../helpers/filmsExtractor";
 import errorHandler from "../errorHandler";
 import imdb from "../fetchers/imdb";
 import apicache from "apicache";
+import queryString from "query-string";
 
 const moviesRouter = express.Router();
 
@@ -21,8 +22,11 @@ moviesRouter.get(
     if (!req.query.title) {
       return errorHandler.noQueryParameterProvided();
     }
-    const title = req.query.title;
-    return await extractor.getFilmFromTorrentTitle(title);
+    return await Promise.all(
+      req.query.title.map(async title => {
+        return await extractor.getFilmFromTorrentTitle(title);
+      })
+    );
   })
 );
 

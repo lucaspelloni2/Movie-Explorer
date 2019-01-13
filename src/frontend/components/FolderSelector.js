@@ -3,6 +3,7 @@ import styled from "styled-components";
 import classNames from "classnames";
 import Dropzone from "react-dropzone";
 import Icon from "../helpers/Icon";
+import queryString from "querystring";
 
 const DropContainer = styled.div`
   display: flex;
@@ -62,7 +63,11 @@ class FolderSelector extends React.Component {
   }
 
   onDrop = files => {
-    console.log(files);
+    let titles = [];
+    files.forEach(file => {
+      titles.push(file.name);
+    });
+    const body = queryString.stringify({ titles });
   };
 
   render() {
