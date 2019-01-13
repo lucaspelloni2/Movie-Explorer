@@ -23,6 +23,14 @@ const SubTitle = styled.h4`
 `;
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      movies: null,
+      isLoading: false
+    };
+  }
+
   render() {
     return (
       <Container>
@@ -31,8 +39,15 @@ class App extends Component {
           A clean web-client for exploring local downloaded films, representing
           them using aggregated data.
         </SubTitle>
-        <FolderSelector />
-        <Movies />
+        <FolderSelector
+          onLoadedData={movies => {
+            this.setState({ movies });
+          }}
+          onLoading={isLoading => {
+            this.setState({ isLoading });
+          }}
+        />
+        <Movies movies={this.state.movies} isLoading={this.state.isLoading} />
       </Container>
     );
   }

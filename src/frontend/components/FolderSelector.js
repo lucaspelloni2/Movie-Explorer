@@ -64,6 +64,7 @@ class FolderSelector extends React.Component {
   }
 
   onDrop = files => {
+    this.props.onLoading(true);
     let titles = [];
     files.forEach(file => {
       titles.push(file.name);
@@ -77,12 +78,13 @@ class FolderSelector extends React.Component {
     })
       .then(response => response.json())
       .then(async response => {
-        if (response.success) {
-          console.log(response.data);
-        }
+        const films = response.data;
+        this.props.onLoadedData(films);
+        this.props.onLoading(false);
       })
       .catch(err => {
         console.log(err);
+        this.props.onLoading(false);
       });
   };
 
