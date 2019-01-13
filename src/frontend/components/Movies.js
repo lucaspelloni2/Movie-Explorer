@@ -33,10 +33,10 @@ class Movies extends React.Component {
       }
     })
       .then(response => response.json())
-      .then(response => {
+      .then(async response => {
         if (response.success) {
+          await new Promise(resolve => setTimeout(resolve, 750));
           this.setState({ movies: response.data });
-          console.log(response.data);
         } else {
         }
       })
@@ -53,7 +53,7 @@ class Movies extends React.Component {
         ) : (
           <Container>
             {this.state.movies.map(movie => {
-              return <Movie movie={movie} id={movie.id} key={movie.id}/>;
+              return <Movie movie={movie} id={movie.id} key={movie.id} />;
             })}
           </Container>
         )}
