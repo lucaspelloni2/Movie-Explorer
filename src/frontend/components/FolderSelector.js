@@ -4,6 +4,7 @@ import classNames from "classnames";
 import Dropzone from "react-dropzone";
 import Icon from "../helpers/Icon";
 import queryString from "querystring";
+import { getDomain } from "../helpers/getDomain";
 
 const DropContainer = styled.div`
   display: flex;
@@ -67,7 +68,22 @@ class FolderSelector extends React.Component {
     files.forEach(file => {
       titles.push(file.name);
     });
-    const body = queryString.stringify({ titles });
+    const body = queryString.stringify({ title: titles });
+    fetch(`${getDomain()}/api/movies/find?${body}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => response.json())
+      .then(async response => {
+        if (response.success) {
+          console.log(response.data);
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   render() {
