@@ -22,7 +22,7 @@ moviesRouter.get(
       return errorHandler.noQueryParameterProvided();
     }
     const title = req.query.title;
-    return await imdb.get(title);
+    return await extractor.getFilmFromTorrentTitle(title);
   })
 );
 
