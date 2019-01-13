@@ -2,8 +2,12 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { BACKGROUND_COLOR } from "./helpers/colors";
 import Movies from "./components/Movies";
+import FolderSelector from "./components/FolderSelector";
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 const Title = styled.h1`
   font-size: 3.5em;
@@ -28,6 +32,7 @@ class App extends Component {
           A clean web-client for exploring local downloaded films, representing
           them using aggregated data.
         </SubTitle>
+        <FolderSelector />
         <Movies />
       </Container>
     );
