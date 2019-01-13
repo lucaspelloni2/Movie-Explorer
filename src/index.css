@@ -6,10 +6,9 @@ body {
   font-family: "Krub", sans-serif;
   color: white;
   height: 100%;
-  background: linear-gradient(rgba(30, 27, 38, 0.9), rgba(44, 40, 58, 0.9)),
-    url("http://suitelife.com/blog/wp-content/uploads/2017/12/empty-cinema.jpg");
-  background-size: cover ;
-    background-repeat: repeat;
+  background: linear-gradient(rgba(30, 27, 38, 0.9), rgba(30, 27, 38, 0.9)),
+    url("http://i63.tinypic.com/17s7me.jpg");
+  background-size: cover;
 }
 
 code {
