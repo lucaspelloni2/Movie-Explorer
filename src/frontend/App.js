@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { BACKGROUND_COLOR } from "./helpers/colors";
 import Movies from "./components/Movies";
 import FolderSelector from "./components/FolderSelector";
 

@@ -36,6 +36,7 @@ class Movies extends React.Component {
       .then(async response => {
         if (response.success) {
           await new Promise(resolve => setTimeout(resolve, 750));
+          console.log(this.state.movies);
           this.setState({ movies: response.data });
         } else {
         }
@@ -53,7 +54,9 @@ class Movies extends React.Component {
         ) : (
           <Container>
             {this.state.movies.map(movie => {
-              return <Movie movie={movie} id={movie.id} key={movie.id} />;
+              if (movie) {
+                return <Movie movie={movie} id={movie.id} key={movie.id} />;
+              }
             })}
           </Container>
         )}
