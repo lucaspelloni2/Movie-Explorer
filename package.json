@@ -5,6 +5,7 @@
   "dependencies": {
     "apicache": "^1.2.3",
     "cheerio": "^1.0.0-rc.2",
+    "classnames": "latest",
     "cors": "^2.8.4",
     "express": "^4.16.4",
     "get-folder-size": "^2.0.0",
@@ -12,6 +13,7 @@
     "moment": "^2.22.2",
     "nodemon": "^1.18.4",
     "prettysize": "^1.1.0",
+    "query-string": "^6.2.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-dropzone": "^8.0.3",
@@ -19,8 +21,7 @@
     "react-scripts": "2.0.5",
     "react-star-ratings": "^2.3.0",
     "styled-components": "^4.0.2",
-    "torrent-name-parser": "^0.6.5",
-    "classnames": "latest"
+    "torrent-name-parser": "^0.6.5"
   },
   "scripts": {
     "start": "react-scripts start",
