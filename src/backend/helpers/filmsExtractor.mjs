@@ -33,31 +33,28 @@ const getFiles = async () => {
 
   return await Promise.all(
     fs.readdirSync(FILM_DIRECTORY).map(async file => {
-      console.log(file);
-      if (file !== ".DS_Store") {
-        const film = new Film(tnp(file));
-        if (film.title) {
-          film.path = file;
-          film.title = preProcessTitle(film.title);
-          films.push(film);
-          const myFilm = await imdb.get(film.title);
-          if (myFilm) {
-            film.id = myFilm.id;
-            film.movieLink = myFilm.movieLink;
-            if (film.id) {
-              const myFilmData = await omdb.getMetaData(film.id);
-              // film.trailer = await moviedb.getTrailer(film.id);
-              return { ...film, ...myFilmData };
-            } else {
-              // TODO: handle films without id case (thus not found on the api)
-              return film;
-            }
+      const film = new Film(tnp(file));
+      if (film.title) {
+        film.path = file;
+        film.title = preProcessTitle(film.title);
+        films.push(film);
+        const myFilm = await imdb.get(film.title);
+        if (myFilm) {
+          film.id = myFilm.id;
+          film.movieLink = myFilm.movieLink;
+          if (film.id) {
+            const myFilmData = await omdb.getMetaData(film.id);
+            // film.trailer = await moviedb.getTrailer(film.id);
+            return { ...film, ...myFilmData };
+          } else {
+            // TODO: handle films without id case (thus not found on the api)
+            return film;
           }
-          return film;
-        } else {
-          console.log(" // TODO: handle case with title not well formatted");
-          // TODO: handle case with title not well formatted
         }
+        return film;
+      } else {
+        console.log(" // TODO: handle case with title not well formatted");
+        // TODO: handle case with title not well formatted
       }
     })
   );
