@@ -14,11 +14,13 @@
     "prettysize": "^1.1.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-dropzone": "^8.0.3",
     "react-lottie": "^1.2.3",
     "react-scripts": "2.0.5",
     "react-star-ratings": "^2.3.0",
     "styled-components": "^4.0.2",
-    "torrent-name-parser": "^0.6.5"
+    "torrent-name-parser": "^0.6.5",
+    "classnames": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
