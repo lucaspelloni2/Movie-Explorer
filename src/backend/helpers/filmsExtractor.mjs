@@ -7,12 +7,11 @@ import { Film } from "../models/Film";
 import omdb from "../fetchers/omdb";
 import moviedb from "../fetchers/moviedb";
 
-const FILM_DIRECTORY =
-  "/Volumes/Lucas's USB C HD/old hardisk/Film/All";
-/*
+/*const FILM_DIRECTORY =
+  "/Volumes/Lucas's USB C HD/old hardisk/Film/All";*/
+
 const FILM_DIRECTORY =
   "/Users/lucaspelloni/Desktop/GitHub/movie-explorer/films";
-*/
 
 const preProcessTitle = title => {
   return title.replace(/[^a-zA-Z ]/g, " ");

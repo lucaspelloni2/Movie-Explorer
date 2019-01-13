@@ -53,7 +53,7 @@ class Movies extends React.Component {
         ) : (
           <Container>
             {this.state.movies.map(movie => {
-              return <Movie movie={movie} id={movie.id} />;
+              return <Movie movie={movie} id={movie.id} key={movie.id}/>;
             })}
           </Container>
         )}
