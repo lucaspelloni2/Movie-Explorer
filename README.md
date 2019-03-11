@@ -1,6 +1,6 @@
 # 🎞 Explore your Movie - Always. 📹🎥 
 I implemented this app in my free time and decided to open source it. 
-It allows many users to explore their locally stored movies, by simple dragging and dropping the files into the browser. 
+It allows many users to explore their locally stored movies, by simply dragging and dropping the files into the browser. 
 It does not matter in which format, this app is able to perform Web scraping from multiple well-known movie sources. 
 Hope you enjoy it :)
 
